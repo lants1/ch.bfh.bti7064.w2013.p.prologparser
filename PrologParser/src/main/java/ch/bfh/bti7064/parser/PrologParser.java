@@ -20,7 +20,6 @@ public class PrologParser {
 	List<String> tokens = new ArrayList<String>();
 
 	public PrologParser(String stringToParse) {
-		this.stringToParse = stringToParse;
 		this.currentState = new Start();
 	}
 
