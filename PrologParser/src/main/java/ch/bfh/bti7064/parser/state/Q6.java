@@ -2,7 +2,7 @@ package ch.bfh.bti7064.parser.state;
 
 import ch.bfh.bti7064.parser.ParserHelper;
 
-public class Start implements State {
+public class Q6 implements State {
 
 	private boolean isOutputState = false;
 	
@@ -11,23 +11,15 @@ public class Start implements State {
 	}
 	
 	public State getState(char nextChar) {
-		// goToQ1
 		if (ParserHelper.isSpecialCase(nextChar)) {
 			return new Q1();
 		}
-
-		// goToQ2
-		if (ParserHelper.isUnderline(nextChar)
-				|| ParserHelper.isUppercase(nextChar)) {
-			return new Q2();
-		}
-
-		// goToQ3 NEA Part entweder sich selber oder Q3
 		if (ParserHelper.isNumeric(nextChar)
-				|| ParserHelper.isLowercase(nextChar)) {
-			return new Q3();
-
+				|| ParserHelper.isLowercase(nextChar) || ParserHelper.isUppercase(nextChar)
+				|| ParserHelper.isUnderline(nextChar)) {
+			return this;
 		}
+
 		return new Invalid();
 	}
 }

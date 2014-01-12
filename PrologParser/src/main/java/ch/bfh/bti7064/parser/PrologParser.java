@@ -20,6 +20,7 @@ public class PrologParser {
 	List<String> tokens = new ArrayList<String>();
 
 	public PrologParser(String stringToParse) {
+		this.stringToParse = stringToParse;
 		this.currentState = new Start();
 	}
 
@@ -34,7 +35,7 @@ public class PrologParser {
 		int counter = 0;
 		for (char posChar : eachSymbols) {
 			State newState = getCurrentState().getState(posChar);
-			// no statechange...
+			// no output token
 			if (newState.equals(getCurrentState())) {
 				setCurrentToken(getCurrentToken() + posChar);
 			}
@@ -42,12 +43,12 @@ public class PrologParser {
 			else {
 				setCurrentState(newState);
 				// save and reset token
-				if (counter > 0) {
+				if ( (newState.isOutputState()) && counter > 1) {
 					addToken(getCurrentToken());
 					setCurrentToken(""+posChar);
 				}
 				else{
-					setCurrentToken(""+posChar);
+					setCurrentToken(getCurrentToken()+posChar);
 				}
 			}
 			counter++;

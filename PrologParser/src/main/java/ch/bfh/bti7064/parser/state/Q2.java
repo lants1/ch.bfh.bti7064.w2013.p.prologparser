@@ -4,14 +4,19 @@ import ch.bfh.bti7064.parser.ParserHelper;
 
 public class Q2 implements State{
 
+	private boolean isOutputState = true;
+	
+	public boolean isOutputState() {
+		return isOutputState;
+	}
+	
 	public State getState(char nextChar){
 		// goToQ1
 		// goToQ1
 		if (ParserHelper.isNumeric(nextChar)
 				|| ParserHelper.isUppercase(nextChar)
-				|| ParserHelper.isLowercase(nextChar)
-				|| ParserHelper.isUnderline(nextChar)) {
-			return this;
+				|| ParserHelper.isLowercase(nextChar)) {
+			return new Q6();
 		}
 
 		// goToQ2
