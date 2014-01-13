@@ -22,8 +22,8 @@ public class PrologParserTest {
 		assertTrue(StringUtils.equals(parser.getTokens().get(7),","));
 		assertTrue(StringUtils.equals(parser.getTokens().get(8),"Y"));
 		assertTrue(StringUtils.equals(parser.getTokens().get(9),")"));
-		assertTrue(StringUtils.equals(parser.getTokens().get(9),")"));
-		assertTrue(StringUtils.equals(parser.getTokens().get(10),"."));
+		assertTrue(StringUtils.equals(parser.getTokens().get(10),")"));
+		assertTrue(StringUtils.equals(parser.getTokens().get(11),"."));
 	}
 
 }
