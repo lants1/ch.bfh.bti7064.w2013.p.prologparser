@@ -36,7 +36,7 @@ public class PrologParser {
 		for (char posChar : eachSymbols) {
 			State newState = getCurrentState().getState(posChar);
 			// no output token
-			if (newState.equals(getCurrentState())) {
+			if (newState.equals(getCurrentState()) && (!newState.isOutputState())) {
 				setCurrentToken(getCurrentToken() + posChar);
 			}
 			// statechanges...
