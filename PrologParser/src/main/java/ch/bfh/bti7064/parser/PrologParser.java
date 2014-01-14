@@ -62,15 +62,11 @@ public class PrologParser {
 		return stringToParse;
 	}
 
-	public void setStringToParse(String stringToParse) {
-		this.stringToParse = stringToParse;
-	}
-
 	public State getCurrentState() {
 		return currentState;
 	}
 
-	public void setCurrentState(State currentState) {
+	private void setCurrentState(State currentState) {
 		this.currentState = currentState;
 	}
 
@@ -78,19 +74,15 @@ public class PrologParser {
 		return currentToken;
 	}
 
-	public void setCurrentToken(String currentToken) {
+	private void setCurrentToken(String currentToken) {
 		this.currentToken = currentToken;
 	}
 
 	public List<String> getTokens() {
 		return tokens;
 	}
-
-	public void setTokens(List<String> tokens) {
-		this.tokens = tokens;
-	}
 	
-	public void addToken(String token){
+	private void addToken(String token){
 		this.tokens.add(token);
 	}
 }

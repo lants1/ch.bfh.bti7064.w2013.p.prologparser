@@ -4,6 +4,12 @@ import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
 
+/**
+ * Tests the FileReader and it's functionality
+ * 
+ * @author Swen Lanthemann
+ *
+ */
 public class FileReaderTest {
 
 	@Test

@@ -2,14 +2,22 @@ package ch.bfh.bti7064.parser.state;
 
 import ch.bfh.bti7064.parser.ParserHelper;
 
+/**
+ * The beginning State of the PrologParser
+ * 
+ * @author Swen Lanthemann
+ *
+ */
 public class Start implements State {
 
 	private boolean isOutputState = false;
 	
+	@Override
 	public boolean isOutputState() {
 		return isOutputState;
 	}
 	
+	@Override
 	public State getState(char nextChar) {
 		// goToQ1
 		if (ParserHelper.isSpecialCase(nextChar)) {

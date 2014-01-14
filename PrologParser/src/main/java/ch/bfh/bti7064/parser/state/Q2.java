@@ -6,10 +6,12 @@ public class Q2 implements State{
 
 	private boolean isOutputState = true;
 	
+	@Override
 	public boolean isOutputState() {
 		return isOutputState;
 	}
 	
+	@Override
 	public State getState(char nextChar){
 		// goToQ1
 		// goToQ1

@@ -12,7 +12,8 @@ public class PrologPreprocessor {
 			// Removes all Whitespaces and invisible things..
 			lineToPreprocess = lineToPreprocess.replaceAll("\\s+","");
 			
-			// Removes all prolog comments if a % occure...
+			// Removes all prolog comments which occure
+			// an % indicates the beginning of a comment
 			char[] eachSymbols = new char[lineToPreprocess.length()];
 			lineToPreprocess.getChars(0, lineToPreprocess.length(), eachSymbols, 0);
 			StringBuffer resultBuffer = new StringBuffer();

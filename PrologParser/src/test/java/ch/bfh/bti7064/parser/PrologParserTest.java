@@ -5,13 +5,18 @@ import static org.junit.Assert.*;
 import org.apache.commons.lang3.StringUtils;
 import org.junit.Test;
 
+/**
+ * Tests the Parser's functionality.
+ * 
+ * @author Swen Lanthemann
+ *
+ */
 public class PrologParserTest {
 
 	@Test
 	public void test() {
 		PrologParser parser = new PrologParser("grossvater(Z,mutter(X,Y)).");
 		parser.parse();
-		System.out.println(parser.getTokens().toString());
 		assertTrue(StringUtils.equals(parser.getTokens().get(0),"grossvater"));
 		assertTrue(StringUtils.equals(parser.getTokens().get(1),"("));
 		assertTrue(StringUtils.equals(parser.getTokens().get(2),"Z"));

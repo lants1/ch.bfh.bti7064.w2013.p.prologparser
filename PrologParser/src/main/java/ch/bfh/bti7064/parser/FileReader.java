@@ -18,6 +18,11 @@ public class FileReader {
 	private String filePath;
 	private String processedString;
 
+	/**
+	 * FileReader constructor
+	 * 
+	 * @param filePath
+	 */
 	public FileReader(String filePath) {
 		this.filePath = filePath;
 	}
@@ -50,14 +55,14 @@ public class FileReader {
 				log.log(Level.SEVERE, "ReaderException", e);
 			}
 		}
-		processedString = processedStringBf.toString();
+		setProcessedString(processedStringBf.toString());
 	}
 	
 	public String getProcessedString() {
 		return processedString;
 	}
 
-	public void setProcessedString(String processedString) {
+	private void setProcessedString(String processedString) {
 		this.processedString = processedString;
 	}
 }

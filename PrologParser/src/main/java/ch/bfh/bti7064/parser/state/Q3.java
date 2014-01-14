@@ -6,10 +6,12 @@ public class Q3 implements State {
 
 	private boolean isOutputState = true;
 	
+	@Override
 	public boolean isOutputState() {
 		return isOutputState;
 	}
 	
+	@Override
 	public State getState(char nextChar) {
 		// goToQ1
 		if (ParserHelper.isNumeric(nextChar)

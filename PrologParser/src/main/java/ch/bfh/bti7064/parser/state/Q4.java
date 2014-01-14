@@ -6,10 +6,12 @@ public class Q4 implements State {
 
 	private boolean isOutputState = false;
 	
+	@Override
 	public boolean isOutputState() {
 		return isOutputState;
 	}
 
+	@Override
 	public State getState(char nextChar) {
 		if (ParserHelper.isSpecialCase(nextChar)) {
 			return new Q1();

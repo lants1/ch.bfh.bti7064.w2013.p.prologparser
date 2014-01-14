@@ -6,10 +6,12 @@ public class Q5 implements State {
 
 	private boolean isOutputState = false;
 	
+	@Override
 	public boolean isOutputState() {
 		return isOutputState;
 	}
 	
+	@Override
 	public State getState(char nextChar) {
 		if ('-' == nextChar) {
 			return this;
