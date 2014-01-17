@@ -4,6 +4,8 @@ import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
 
+import ch.bfh.bti7064.parser.core.FileReader;
+
 /**
  * Tests the FileReader and it's functionality
  * 

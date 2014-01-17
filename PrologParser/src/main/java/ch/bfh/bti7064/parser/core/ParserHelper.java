@@ -1,4 +1,4 @@
-package ch.bfh.bti7064.parser;
+package ch.bfh.bti7064.parser.core;
 
 import org.apache.commons.lang3.CharUtils;
 

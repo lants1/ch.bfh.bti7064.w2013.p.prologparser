@@ -5,6 +5,8 @@ import static org.junit.Assert.*;
 import org.apache.commons.lang3.StringUtils;
 import org.junit.Test;
 
+import ch.bfh.bti7064.parser.core.PrologParser;
+
 /**
  * Tests the Parser's functionality.
  * 

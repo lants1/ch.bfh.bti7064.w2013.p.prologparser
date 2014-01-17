@@ -1,6 +1,6 @@
 package ch.bfh.bti7064.parser.state;
 
-import ch.bfh.bti7064.parser.ParserHelper;
+import ch.bfh.bti7064.parser.core.ParserHelper;
 
 public class Q2 implements State{
 

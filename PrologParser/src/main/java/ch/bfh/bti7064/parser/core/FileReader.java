@@ -1,6 +1,7 @@
-package ch.bfh.bti7064.parser;
+package ch.bfh.bti7064.parser.core;
 
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.logging.Level;
@@ -17,6 +18,7 @@ public class FileReader {
 	private Logger log = Logger.getLogger("ch.bfh.bti7064.parser.FileReader");
 	private String filePath;
 	private String processedString;
+	private File file = null;
 
 	/**
 	 * FileReader constructor
@@ -28,6 +30,15 @@ public class FileReader {
 	}
 
 	/**
+	 * FileReader constructor
+	 * 
+	 * @param filePath
+	 */
+	public FileReader(File file) {
+		this.file = file;
+	}
+
+	/**
 	 * reads a line file for file..
 	 */
 	public void read() {
@@ -35,7 +46,13 @@ public class FileReader {
 		StringBuffer processedStringBf = new StringBuffer();
 		try {
 			// Get BufferedReader from file
-			br = new BufferedReader(new InputStreamReader(this.getClass().getResourceAsStream(filePath)));
+			if (file != null) {
+				br = new BufferedReader(new InputStreamReader(this.getClass()
+						.getResourceAsStream(file.getAbsolutePath())));
+			} else {
+				br = new BufferedReader(new InputStreamReader(this.getClass()
+						.getResourceAsStream(filePath)));
+			}
 			String line = br.readLine();
 
 			while (line != null) {
@@ -57,7 +74,7 @@ public class FileReader {
 		}
 		setProcessedString(processedStringBf.toString());
 	}
-	
+
 	public String getProcessedString() {
 		return processedString;
 	}

@@ -1,4 +1,4 @@
-package ch.bfh.bti7064.parser;
+package ch.bfh.bti7064.parser.core;
 
 import java.util.ArrayList;
 import java.util.List;

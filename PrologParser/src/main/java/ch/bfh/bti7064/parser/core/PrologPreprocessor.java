@@ -1,4 +1,4 @@
-package ch.bfh.bti7064.parser;
+package ch.bfh.bti7064.parser.core;
 
 /**
  * PrologPreprocessor removes whitespaceses, invisible things and comments from a prolog file...
