@@ -27,8 +27,7 @@ public final class ParserHelper {
 	}
 
 	public static boolean isSpecialCase(char checkChar) {
-		char[] specialCh = { '<', '>', '!', '@', '[', ']', '#', '$', '%', '^',
-				'&', '*', '(', ')',',' , ' ', '.','_','|','T','\'',':'};
+		char[] specialCh = { '<', '>', '!', '[', ']', '(', ')',',' , '.','|','\'',':'};
 
 		for (Character current : specialCh) {
 			if (current == checkChar)
