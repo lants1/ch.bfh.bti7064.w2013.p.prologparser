@@ -14,7 +14,7 @@ public class Q1 implements State {
 	@Override
 	public State getState(char nextChar) {
 		if(':' == nextChar){
-			return new Q5();
+			return new Q7();
 		}
 		if (ParserHelper.isSpecialCase(nextChar)) {
 			return this;

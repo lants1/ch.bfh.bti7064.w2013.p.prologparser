@@ -35,22 +35,17 @@ public class PrologParser {
 		int counter = 0;
 		for (char posChar : eachSymbols) {
 			State newState = getCurrentState().getState(posChar);
-			// no output token
-			if (newState.equals(getCurrentState()) && (!newState.isOutputState())) {
-				setCurrentToken(getCurrentToken() + posChar);
+			
+			setCurrentState(newState);
+			// save and reset token
+			if ( (newState.isOutputState()) && counter > 1) {
+				addToken(getCurrentToken());
+				setCurrentToken(""+posChar);
 			}
-			// statechanges...
-			else {
-				setCurrentState(newState);
-				// save and reset token
-				if ( (newState.isOutputState()) && counter > 1) {
-					addToken(getCurrentToken());
-					setCurrentToken(""+posChar);
-				}
-				else{
-					setCurrentToken(getCurrentToken()+posChar);
-				}
+			else{
+				setCurrentToken(getCurrentToken()+posChar);
 			}
+			
 			counter++;
 		}
 		// add final token...
