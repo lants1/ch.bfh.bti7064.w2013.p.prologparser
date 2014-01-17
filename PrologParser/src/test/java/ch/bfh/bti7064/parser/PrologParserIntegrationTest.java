@@ -12,8 +12,11 @@ import org.junit.Test;
  * 
  */
 public class PrologParserIntegrationTest {
+	
 	@Test
 	public void testAccordingToParsedOutput() {
+		// Soloution handout from teacher was wrong so 
+		// i need to change the solution to the correct one...
 		FileReader reader = new FileReader("/blocksworld.pl");
 		reader.read();
 		PrologParser parser = new PrologParser(reader.getProcessedString());
@@ -50,7 +53,6 @@ public class PrologParserIntegrationTest {
 		assertTrue(StringUtils.equals(parser.getTokens().get(26), "T"));
 		assertTrue(StringUtils.equals(parser.getTokens().get(27), ")"));
 		assertTrue(StringUtils.equals(parser.getTokens().get(28), "."));
-		System.out.println(parser.getTokens().get(29));
 		assertTrue(StringUtils
 				.equals(parser.getTokens().get(29), "empty_stack"));
 		assertTrue(StringUtils.equals(parser.getTokens().get(30), "("));
@@ -61,52 +63,54 @@ public class PrologParserIntegrationTest {
 		assertTrue(StringUtils.equals(parser.getTokens().get(35),
 				"member_stack"));
 		assertTrue(StringUtils.equals(parser.getTokens().get(36), "("));
-		assertTrue(StringUtils.equals(parser.getTokens().get(37), "X"));
+		assertTrue(StringUtils.equals(parser.getTokens().get(37), "E"));
 		assertTrue(StringUtils.equals(parser.getTokens().get(38), ","));
 		assertTrue(StringUtils.equals(parser.getTokens().get(39), "S"));
 		assertTrue(StringUtils.equals(parser.getTokens().get(40), ")"));
 		assertTrue(StringUtils.equals(parser.getTokens().get(41), ":-"));
 		assertTrue(StringUtils.equals(parser.getTokens().get(42), "member"));
-		assertTrue(StringUtils.equals(parser.getTokens().get(43), "(E"));
-		assertTrue(StringUtils.equals(parser.getTokens().get(44), ","));
-		assertTrue(StringUtils.equals(parser.getTokens().get(45), "S"));
-		assertTrue(StringUtils.equals(parser.getTokens().get(46), ")"));
-		assertTrue(StringUtils.equals(parser.getTokens().get(47), "."));
-		assertTrue(StringUtils.equals(parser.getTokens().get(48), "stack"));
-		assertTrue(StringUtils.equals(parser.getTokens().get(49), "("));
-		assertTrue(StringUtils.equals(parser.getTokens().get(50), "E"));
-		assertTrue(StringUtils.equals(parser.getTokens().get(51), ","));
-		assertTrue(StringUtils.equals(parser.getTokens().get(52), "S"));
-		assertTrue(StringUtils.equals(parser.getTokens().get(53), ","));
-		assertTrue(StringUtils.equals(parser.getTokens().get(54), "["));
-		assertTrue(StringUtils.equals(parser.getTokens().get(55), "E"));
-		assertTrue(StringUtils.equals(parser.getTokens().get(56), ","));
-		assertTrue(StringUtils.equals(parser.getTokens().get(57), "S"));
-		assertTrue(StringUtils.equals(parser.getTokens().get(58), "]"));
-		assertTrue(StringUtils.equals(parser.getTokens().get(59), ")"));
-		assertTrue(StringUtils.equals(parser.getTokens().get(60), "."));
+		assertTrue(StringUtils.equals(parser.getTokens().get(43), "("));
+		assertTrue(StringUtils.equals(parser.getTokens().get(44), "E"));
+		assertTrue(StringUtils.equals(parser.getTokens().get(45), ","));
+		assertTrue(StringUtils.equals(parser.getTokens().get(46), "S"));
+		assertTrue(StringUtils.equals(parser.getTokens().get(47), ")"));
+		assertTrue(StringUtils.equals(parser.getTokens().get(48), "."));
+		assertTrue(StringUtils.equals(parser.getTokens().get(49), "stack"));
+		assertTrue(StringUtils.equals(parser.getTokens().get(50), "("));
+		assertTrue(StringUtils.equals(parser.getTokens().get(51), "E"));
+		assertTrue(StringUtils.equals(parser.getTokens().get(52), ","));
+		assertTrue(StringUtils.equals(parser.getTokens().get(53), "S"));
+		assertTrue(StringUtils.equals(parser.getTokens().get(54), ","));
+		assertTrue(StringUtils.equals(parser.getTokens().get(55), "["));
+		assertTrue(StringUtils.equals(parser.getTokens().get(56), "E"));
+System.out.println(parser.getTokens().get(57));
+		assertTrue(StringUtils.equals(parser.getTokens().get(57), "|"));
+		assertTrue(StringUtils.equals(parser.getTokens().get(58), "S"));
+		assertTrue(StringUtils.equals(parser.getTokens().get(59), "]"));
+		assertTrue(StringUtils.equals(parser.getTokens().get(60), ")"));
+		assertTrue(StringUtils.equals(parser.getTokens().get(61), "."));
 		assertTrue(StringUtils
-				.equals(parser.getTokens().get(61), "empty_queue"));
-		assertTrue(StringUtils.equals(parser.getTokens().get(62), "("));
-		assertTrue(StringUtils.equals(parser.getTokens().get(63), "["));
-		assertTrue(StringUtils.equals(parser.getTokens().get(64), "]"));
-		assertTrue(StringUtils.equals(parser.getTokens().get(65), ")"));
-		assertTrue(StringUtils.equals(parser.getTokens().get(66), "."));
-		assertTrue(StringUtils.equals(parser.getTokens().get(67),
+				.equals(parser.getTokens().get(62), "empty_queue"));
+		assertTrue(StringUtils.equals(parser.getTokens().get(63), "("));
+		assertTrue(StringUtils.equals(parser.getTokens().get(64), "["));
+		assertTrue(StringUtils.equals(parser.getTokens().get(65), "]"));
+		assertTrue(StringUtils.equals(parser.getTokens().get(66), ")"));
+		assertTrue(StringUtils.equals(parser.getTokens().get(67), "."));
+		assertTrue(StringUtils.equals(parser.getTokens().get(68),
 				"member_queue"));
-		assertTrue(StringUtils.equals(parser.getTokens().get(68), "("));
-		assertTrue(StringUtils.equals(parser.getTokens().get(69), "E"));
-		assertTrue(StringUtils.equals(parser.getTokens().get(70), ","));
-		assertTrue(StringUtils.equals(parser.getTokens().get(71), "S"));
-		assertTrue(StringUtils.equals(parser.getTokens().get(72), ")"));
-		assertTrue(StringUtils.equals(parser.getTokens().get(73), ":-"));
-		assertTrue(StringUtils.equals(parser.getTokens().get(74), "member"));
-		assertTrue(StringUtils.equals(parser.getTokens().get(75), "("));
-		assertTrue(StringUtils.equals(parser.getTokens().get(76), "E"));
-		assertTrue(StringUtils.equals(parser.getTokens().get(77), ","));
-		assertTrue(StringUtils.equals(parser.getTokens().get(78), "S"));
-		assertTrue(StringUtils.equals(parser.getTokens().get(79), ")"));
-		assertTrue(StringUtils.equals(parser.getTokens().get(80), "."));
+		assertTrue(StringUtils.equals(parser.getTokens().get(69), "("));
+		assertTrue(StringUtils.equals(parser.getTokens().get(70), "E"));
+		assertTrue(StringUtils.equals(parser.getTokens().get(71), ","));
+		assertTrue(StringUtils.equals(parser.getTokens().get(72), "S"));
+		assertTrue(StringUtils.equals(parser.getTokens().get(73), ")"));
+		assertTrue(StringUtils.equals(parser.getTokens().get(74), ":-"));
+		assertTrue(StringUtils.equals(parser.getTokens().get(75), "member"));
+		assertTrue(StringUtils.equals(parser.getTokens().get(76), "("));
+		assertTrue(StringUtils.equals(parser.getTokens().get(77), "E"));
+		assertTrue(StringUtils.equals(parser.getTokens().get(78), ","));
+		assertTrue(StringUtils.equals(parser.getTokens().get(79), "S"));
+		assertTrue(StringUtils.equals(parser.getTokens().get(80), ")"));
+		assertTrue(StringUtils.equals(parser.getTokens().get(81), "."));
 	}
 
 }
