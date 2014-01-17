@@ -16,6 +16,9 @@ public class Q1 implements State {
 		if(':' == nextChar){
 			return new Q7();
 		}
+		if('-' == nextChar){
+			return new Q5();
+		}
 		if (ParserHelper.isSpecialCase(nextChar)) {
 			return this;
 		}

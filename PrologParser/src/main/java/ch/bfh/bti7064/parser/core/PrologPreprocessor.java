@@ -18,7 +18,7 @@ public class PrologPreprocessor {
 			lineToPreprocess.getChars(0, lineToPreprocess.length(), eachSymbols, 0);
 			StringBuffer resultBuffer = new StringBuffer();
 			for (char posChar : eachSymbols) {
-				if(posChar == '%'){
+				if(posChar == '%' || '/' == posChar){
 					return resultBuffer.toString();
 				}
 				resultBuffer.append(posChar);

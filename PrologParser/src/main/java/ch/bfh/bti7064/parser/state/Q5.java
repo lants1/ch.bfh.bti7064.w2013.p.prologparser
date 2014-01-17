@@ -25,6 +25,9 @@ public class Q5 implements State {
 				|| ParserHelper.isUnderline(nextChar)) {
 			return new Q2();
 		}
+		if(ParserHelper.isSpecialCase(nextChar)){
+			return new Q1();
+		}
 		return new Invalid();
 	}
 }
