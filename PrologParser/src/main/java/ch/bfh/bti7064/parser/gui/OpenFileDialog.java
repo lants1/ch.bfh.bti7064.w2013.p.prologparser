@@ -119,7 +119,7 @@ public class OpenFileDialog extends JPanel implements ActionListener {
 			if (returnVal == JFileChooser.APPROVE_OPTION) {
 				File file = fc.getSelectedFile();
 				
-				FileReader reader = new FileReader("/blocksworld.pl");
+				FileReader reader = new FileReader(file);
 				reader.read();
 				PrologParser parser = new PrologParser(reader.getProcessedString());
 				parser.parse();

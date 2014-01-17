@@ -2,6 +2,7 @@ package ch.bfh.bti7064.parser.core;
 
 import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.logging.Level;
@@ -47,8 +48,7 @@ public class FileReader {
 		try {
 			// Get BufferedReader from file
 			if (file != null) {
-				br = new BufferedReader(new InputStreamReader(this.getClass()
-						.getResourceAsStream(file.getAbsolutePath())));
+				br = new BufferedReader(new InputStreamReader(new FileInputStream(file)));
 			} else {
 				br = new BufferedReader(new InputStreamReader(this.getClass()
 						.getResourceAsStream(filePath)));
